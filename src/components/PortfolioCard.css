@@ -1,0 +1,133 @@
+.pcard {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-align: left;
+  background: var(--black-lift);
+  border: 1px solid var(--line);
+}
+
+.pcard--portrait {
+  aspect-ratio: 9 / 16;
+}
+
+.pcard--landscape {
+  aspect-ratio: 16 / 10;
+}
+
+.pcard--square {
+  aspect-ratio: 1 / 1;
+}
+
+.pcard--tall.pcard--portrait {
+  aspect-ratio: 9 / 16.6;
+}
+
+.pcard__media {
+  position: absolute;
+  inset: 0;
+}
+
+.pcard__media video,
+.pcard__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pcard__placeholder {
+  height: 100%;
+}
+
+/* Subtle play indication on video cards */
+.pcard__play {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--black);
+  background: rgba(243, 242, 236, 0.82);
+  opacity: 0.85;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.pcard__play svg {
+  transform: translateX(1px);
+}
+
+.pcard:hover .pcard__play,
+.pcard:focus-visible .pcard__play {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.pcard:hover .pcard__media video,
+.pcard:hover .pcard__media img,
+.pcard:focus-visible .pcard__media video,
+.pcard:focus-visible .pcard__media img {
+  transform: scale(1.045);
+}
+
+.pcard__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0) 45%,
+    rgba(10, 10, 10, 0.86) 100%
+  );
+  opacity: 0.82;
+  transition: opacity 0.4s ease;
+}
+
+.pcard:hover .pcard__overlay,
+.pcard:focus-visible .pcard__overlay {
+  opacity: 1;
+}
+
+.pcard__info {
+  transform: translateY(10px);
+  opacity: 0.88;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
+}
+
+.pcard:hover .pcard__info,
+.pcard:focus-visible .pcard__info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.pcard__category {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--lime);
+  margin-bottom: 0.4rem;
+}
+
+.pcard__project {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.pcard__location {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.78rem;
+  color: rgba(243, 242, 236, 0.6);
+}

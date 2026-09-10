@@ -1,0 +1,47 @@
+.cta {
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  position: relative;
+  background: radial-gradient(
+    circle at 15% 20%,
+    rgba(200, 255, 63, 0.06),
+    transparent 45%
+  );
+}
+
+.cta__inner {
+  width: 100%;
+  padding-top: var(--section-pad);
+  padding-bottom: var(--section-pad);
+}
+
+.cta__sub {
+  margin-top: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.cta__btn {
+  font-size: 0.95rem;
+}
+
+.cta__contacts {
+  display: flex;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.cta__contacts a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--grey);
+  transition: color 0.3s ease;
+}
+
+.cta__contacts a:hover {
+  color: var(--lime);
+}

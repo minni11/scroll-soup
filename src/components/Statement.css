@@ -1,0 +1,15 @@
+.statement {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--black);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: var(--section-pad) var(--edge-pad);
+}
+
+.statement__text {
+  will-change: transform, opacity;
+  max-width: 20ch;
+}
